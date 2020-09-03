@@ -1,0 +1,2 @@
+rootProject.name='Roster App'
+include ':app'

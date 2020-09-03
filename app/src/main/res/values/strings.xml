@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Roster App</string>
+    <string name="search">Search</string>
+    <string name="add_employee">Add</string>
+    <string name="edit_employee">"Edit "</string>
+    <string name="remove_employee">Remove</string>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#59EDE5CB"
+tools:context=".RegisterActivity" >
+
+<TextView
+    android:id="@+id/tv_signup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="SIGN UP"
+    android:textColor="#000000"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.128"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.11" />
+
+<EditText
+    android:id="@+id/et_fullname"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="25dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginRight="40dp"
+    android:ems="10"
+    android:hint="Full Name"
+    android:inputType="textPersonName"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_signup" />
+
+<EditText
+    android:id="@+id/et_emailadd"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginRight="40dp"
+    android:ems="10"
+    android:hint="Email Address"
+    android:inputType="textEmailAddress"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/et_fullname" />
+
+<EditText
+    android:id="@+id/et_mobileno"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginRight="40dp"
+    android:ems="10"
+    android:hint="Mobile Number"
+    android:inputType="phone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/et_emailadd" />
+
+<EditText
+    android:id="@+id/et_password"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginRight="40dp"
+    android:ems="10"
+    android:hint="Password"
+    android:inputType="textPassword"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/et_mobileno" />
+
+<EditText
+    android:id="@+id/et_cpassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginRight="40dp"
+    android:ems="10"
+    android:hint="Confirm Password"
+    android:inputType="textPassword"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+<CheckBox
+    android:id="@+id/cb_agree"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:text="I Agree on Terms"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.146"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/et_cpassword" />
+
+<Button
+    android:id="@+id/btn_signup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginRight="40dp"
+    android:background="#FF5063"
+    android:text="SIGN UP"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/cb_agree"
+    app:layout_constraintVertical_bias="0.0" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
