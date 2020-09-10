@@ -186,6 +186,7 @@ public class Add_Employee_Fragment extends Fragment implements View.OnClickListe
         Toast.makeText(getActivity(), EmpName.getText().toString(), Toast.LENGTH_LONG).show();
 
         try {
+            System.out.println(EmpName.getText().toString()+ EmpEmail.getText().toString()+ EmpMobile.getText().toString());
             db.insertIntoemployeeRecordTable(EmpName.getText().toString(), EmpEmail.getText().toString(), EmpMobile.getText().toString(), day);
             Toast.makeText(getActivity(), "New Employee Added", Toast.LENGTH_LONG).show();
 
