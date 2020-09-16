@@ -4,9 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4ced24">
+    android:background="#59EDE5CB">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclearview_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="222dp"
+        android:layout_height="67dp"
+        android:text="Remove"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclearview_remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclearview_remove"
+        app:layout_constraintVertical_bias="0.114" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

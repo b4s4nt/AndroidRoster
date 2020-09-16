@@ -41,22 +41,22 @@ public class Dipslay_EmployeeList_Fragment extends Fragment {
         DatabaseHelper db = new DatabaseHelper(getContext());
 
         //usernameList=db.getAllUserNameFromDatabase();
-
+        List<String > rowValue = new ArrayList<>();
+        List< List> returnValue = new ArrayList<>();
 
 
         List<Emp_Model> modelClassList =  new ArrayList<>();
 
 
-        List<String> rs = new ArrayList<>();
-        rs= db.getAllValue(DatabaseHelper.addEmployeTableName);
+        //List<Object> rs = new ArrayList<>();
+        modelClassList = db.getAllValue(DatabaseHelper.addEmployeTableName);
+
         //db.getAllValue("Register");
         // System.out.println(rs.get(0));
 
 
-
-        modelClassList.add(new Emp_Model("Basanta 1","Hello This is basanta"));
-        modelClassList.add(new Emp_Model("Basanta 2","Hello This is basanta"));
-        modelClassList.add(new Emp_Model ("Basanta 3","Hello This is basanta"));
+//      modelClassList.add(new Emp_Model("Basanta 1","Hello This is basanta","798798"));
+      //  modelClassList.add(new Emp_Model(modelClassList.get(0).getEmployee_Name(),modelClassList.get(1).getEmployee_Name(),modelClassList.get(1).getEmployee_Name()));
 
         Emp_Adapter adapter = new  Emp_Adapter(modelClassList);
         System.out.println("Here After Creating recyclerview Adapter_");

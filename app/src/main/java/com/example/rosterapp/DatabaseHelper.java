@@ -11,6 +11,8 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    Emp_Model returnValue;
+
     public static final String DATABASE_NAME = "Roster.db";
 
     public static final String username = "username";
@@ -136,21 +138,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnValue;
     }
 
-    public List getAllValue(String tableName){
-        List< String> returnValue = new ArrayList<String>();//
+    public ArrayList<Emp_Model> getAllValue(String tableName){
+
+        List< Emp_Model> returnValue = new ArrayList<>();//
+       // List<String > rowValue = new ArrayList<>();
+       // List< Emp_Model> returnValue = new ArrayList<>();
+
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor rs= db.rawQuery("select * from  Add_Employee ",null);
         System.out.println(rs.getColumnCount());
+        System.out.println(rs.getCount());
         System.out.println("Database Helper in get all Values befor Curssor");
-       // System.out.println(rs.getString(0));
-//        int i =0;
-//        for (rs.moveToFirst(); !rs.isAfterLast(); rs.moveToNext()) {
-//            returnValue.add(rs.getString(i));
-//            i++;
+       // System.out.println( rs.toString());
+        //rs.toString();
+        for (rs.moveToFirst(); !rs.isAfterLast(); rs.moveToNext()) {
+            // rowValue= null;
+           // rs is two dimensional array
+            // each first loop of for gives first row
+            // getString(i) method gives column with given index i
+            // here we have 10 column in one row
+            // 10 column in one row so iterate up to 10 to get each column value
+            returnValue.add(new Emp_Model(rs.getString(0),rs.getString(1),rs.getString(2)));
+
+            //returnValue.add(rowValue);
+
 //
-//        }
-//        System.out.println(returnValue.get(0));
-          return returnValue;
+
+        }
+
+         // System.out.println(returnValue.get(0));
+
+          return (ArrayList<Emp_Model>) returnValue;
 
     }
 
@@ -169,6 +187,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
       }
         return returnValue;
 
+    }
+
+    public void deleteEmployeeFromDataBaseByEmailID(String empemail) {
+        empemail = "basantakandel10@gmail.com";
+
+         SQLiteDatabase db = getWritableDatabase();
+        String deleteEmployeeSQLCommand = " delete from " + addEmployeTableName + " where " + empEmail + " = '" +empemail+"'";
+        System.out.println(deleteEmployeeSQLCommand);
+        db.execSQL(deleteEmployeeSQLCommand);
+        db.close();
+
+
+        db.execSQL(deleteEmployeeSQLCommand);
+       // db.close();
     }
 
 }

@@ -9,12 +9,52 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Remove_Employee_Fragment extends Fragment {
+    private RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return  inflater.inflate(R.layout.fragment_remove_employee,container,false);
+
+
+
+        View v= inflater.inflate(R.layout.fragment_remove_employee,container,false);
+
+        recyclerView = v.findViewById(R.id.recyclearview_remove);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+        recyclerView.setLayoutManager(layoutManager);
+
+
+        System.out.println("Here , before creating database helper object to create addEmployeeTable");
+
+
+        DatabaseHelper db = new DatabaseHelper(getContext());
+
+        // return  inflater.inflate(R.layout.fragment_edit_employee,container,false);
+
+        List<Emp_Model> modelClassList =  new ArrayList<>();
+        modelClassList = db.getAllValue(DatabaseHelper.addEmployeTableName);
+        Emp_Remove_Adapter adapter = new  Emp_Remove_Adapter(modelClassList);
+        System.out.println("Here After Creating recyclerview Adapter_");
+
+        recyclerView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+
+
+
+        //List<Object> rs = new ArrayList<>();
+        modelClassList = db.getAllValue(DatabaseHelper.addEmployeTableName);
+        return  v;
+       // return  inflater.inflate(R.layout.fragment_remove_employee,container,false);
 
     }
 }
